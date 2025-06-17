@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-Elements Demo</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+    }
+    .example {
+      background: #f9f9f9;
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 4px solid #3498db;
+    }
+
+    /* 1. ::before - Add icon before links */
+    .icon-link::before {
+      content: "🔗 ";
+    }
+
+    /* 2. ::after - Add decorative element */
+    .decorative::after {
+      content: " ★";
+      color: gold;
+    }
+
+    /* 3. ::first-letter - Drop cap effect */
+    .dropcap::first-letter {
+      font-size: 3em;
+      float: left;
+      line-height: 0.8;
+      margin-right: 5px;
+      color: #e74c3c;
+    }
+
+    /* 4. ::first-line - Style first line */
+    .first-line::first-line {
+      font-weight: bold;
+      color: #3498db;
+    }
+
+    /* 5. ::selection - Custom text selection */
+    .custom-select::selection {
+      background: #2ecc71;
+      color: white;
+    }
+
+    /* 6. ::placeholder - Style input placeholder */
+    .styled-input::placeholder {
+      color: #9b59b6;
+      font-style: italic;
+    }
+
+    /* 7. ::marker - Custom list bullets */
+    .custom-list ::marker {
+      color: #e67e22;
+      font-size: 1.2em;
+    }
+
+    /* 8. ::backdrop - Modal background */
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    /* 9. ::file-selector-button - Style file input button */
+    .file-input::file-selector-button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    /* 10. ::part - Style shadow DOM parts */
+    /* (Requires specific HTML setup with shadow DOM) */
+  </style>
+</head>
+<body>
+  <h1>10 Practical Pseudo-Element Examples</h1>
+
+  <!-- 1. ::before -->
+  <div class="example">
+    <h2>1. ::before - Add icons</h2>
+    <a href="#" class="icon-link">Documentation</a><br>
+    <a href="#" class="icon-link">Tutorial</a>
+  </div>
+
+  <!-- 2. ::after -->
+  <div class="example">
+    <h2>2. ::after - Decorative elements</h2>
+    <p class="decorative">Featured Product</p>
+    <p class="decorative">Best Seller</p>
+  </div>
+
+  <!-- 3. ::first-letter -->
+  <div class="example">
+    <h2>3. ::first-letter - Drop caps</h2>
+    <p class="dropcap">Once upon a time in a land far away, there lived a princess...</p>
+  </div>
+
+  <!-- 4. ::first-line -->
+  <div class="example">
+    <h2>4. ::first-line - First line styling</h2>
+    <p class="first-line">This entire paragraph has special styling for just its first line. The rest of the text appears normally, but the first line stands out with bold blue text.</p>
+  </div>
+
+  <!-- 5. ::selection -->
+  <div class="example">
+    <h2>5. ::selection - Custom text selection</h2>
+    <p class="custom-select">Try selecting this text. You'll see a green background with white text instead of the default blue.</p>
+  </div>
+
+  <!-- 6. ::placeholder -->
+  <div class="example">
+    <h2>6. ::placeholder - Style input placeholders</h2>
+    <input type="text" class="styled-input" placeholder="Enter your username">
+  </div>
+
+  <!-- 7. ::marker -->
+  <div class="example">
+    <h2>7. ::marker - Custom list markers</h2>
+    <ul class="custom-list">
+      <li>Apples</li>
+      <li>Oranges</li>
+      <li>Bananas</li>
+    </ul>
+  </div>
+
+  <!-- 8. ::backdrop -->
+  <div class="example">
+    <h2>8. ::backdrop - Modal background</h2>
+    <button onclick="document.querySelector('dialog').showModal()">Open Modal</button>
+    <dialog>
+      <p>This modal has a semi-transparent black backdrop.</p>
+      <button onclick="document.querySelector('dialog').close()">Close</button>
+    </dialog>
+  </div>
+
+  <!-- 9. ::file-selector-button -->
+  <div class="example">
+    <h2>9. ::file-selector-button - Style file inputs</h2>
+    <input type="file" class="file-input">
+  </div>
+
+  <!-- 10. ::part (requires shadow DOM) -->
+  <div class="example">
+    <h2>10. ::part - Shadow DOM styling</h2>
+    <p><em>Requires custom element with shadow DOM</em></p>
+  </div>
+
+  <script>
+    // For the modal demo
+    document.addEventListener('DOMContentLoaded', () => {
+      const dialog = document.querySelector('dialog');
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+    });
+  </script>
+</body>
+</html>

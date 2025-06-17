@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 20;
+            box-sizing: border-box;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 20px 20px 50px 20px;
+            padding: 20px;
+
+        }
+
+        .highlight {
+            color: red;
+        }
+
+        #para {
+            color: blue;
+        }
+
+        input[type="password"] {
+            border-radius: 15px;
+            padding: 10px;
+            color: red;
+        }
+
+        ol {
+            margin-left: 20px;
+        }
+
+        article p {
+            color: green;
+            background-color: #1a1a1a;
+            padding: 20px;
+        }
+
+        ul >li {
+            list-style-type: square;
+        }
+
+        h1+p {
+            color: aqua;
+        }
+
+        h1~p {
+            color: red;
+        }
+
+        reference-element ~ * target-element {
+            background: lightgreen;
+            color: blue;
+        }
+        h2~h1{
+            display: inline;
+        }
+        h2~h1:hover{
+            color: skyblue;
+            
+        }
+        p::first-letter{
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+       
+
+    </style>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <p class="highlight">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. </p>
+
+    <p id="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, labore.</p>
+
+
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+
+    <ol>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Grape</li>
+    </ol>
+
+    <article>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis illum odit quia nulla! Suscipit aut tempore
+            laboriosam optio reprehenderit perferendis atque. Exercitationem omnis quos doloremque nesciunt unde quasi
+            velit libero, quisquam veritatis vitae, odio sit labore deserunt quaerat eius alias! Quidem dolorum vel
+            iusto architecto sint! Vitae et illum dignissimos.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis illum odit quia nulla! Suscipit aut tempore
+            laboriosam optio reprehenderit perferendis atque. Exercitationem omnis quos doloremque nesciunt unde quasi
+            velit libero, quisquam veritatis vitae, odio sit labore deserunt quaerat eius alias! Quidem dolorum vel
+            iusto architecto sint! Vitae et illum dignissimos.</p>
+        <div>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </article>
+
+    <ul>
+        <li>apple</li>
+        <li>orange</li>
+        <ol>
+            <li>USA orange</li>
+            <li>Indian orange</li>
+            <li>UK orange</li>
+        </ol>
+        <li>grape</li>
+    </ul>
+
+    <div>
+        <div>
+
+            <h1>adjacent sibling combinator</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+
+        </div>
+    </div>
+
+
+    <container>
+        <reference-element></reference-element>
+        <other-element></other-element> <!-- Not selected -->
+        <target-element>Lorem ipsum dolor sit amet.</target-element> <!-- Selected -->
+        <div>
+            <target-element>Lorem ipsum dolor sit amet.</target-element> <!-- Not selected (not same parent) -->
+        </div>
+        <target-element>Lorem ipsum dolor sit amet.</target-element> <!-- Selected -->
+    </container>
+    <h2></h2>
+    <h1>highlight</h1>
+    
+
+</body>
+
+</html>
