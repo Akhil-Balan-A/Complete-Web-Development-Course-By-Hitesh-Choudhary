@@ -12,12 +12,12 @@
             box-sizing: border-box;
         }
         body{
-            height: 100vh;
+            height: auto;
         }
         .mainDiv {
             border: 1px solid black;
             margin: 20px;
-            height: 500px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -29,48 +29,67 @@
         .div1 {
             border: 1px solid black;
             width: 800px;
-            height: 100px;
+            height: 500px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
+            padding: 50px;
         }
 
         .div2 {
             border: 1px solid black;
             width: 800px;
-            height: 100px;
+            height: 500px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
+            flex-direction: column;
+            padding: 50px;
+           
         }
 
         .div3 {
             border: 1px solid black;
             width: 800px;
-            height: 100px;
+            height: 500px;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-            align-items: center;
+            padding: 50px;
         }
 
         .div4 {
             border: 1px solid black;
             width: 800px;
-            height: 100px;
+            height: 500px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
             align-items: center;
+            padding: 50px;
+        }
+
+        .div5 {
+            border: 1px solid black;
+            width: 800px;
+            height: 500px;
+            /* display: flex; */
+            flex-wrap: wrap;
+            padding: 50px;
+        }
+        .div6 {
+            border: 1px solid black;
+            width: 800px;
+            height: 500px;
+            display: flex;
+           
+            padding: 50px;
         }
 
         .circle1,
         .circle2,
         .circle3,
         .circle4,
-        .circle5 {
+        .circle5, 
+        .circle6, 
+        .circle7, 
+        .circle8, 
+        .circle9, 
+        .circle10 {
             width: 60px;
             height: 60px;
             color: white;
@@ -82,6 +101,7 @@
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             ;
+            margin: 5px;
         }
 
         .circle1 {
@@ -107,6 +127,8 @@
 
 <body>
     <div class="mainDiv">
+        <div>
+            <h2>1. Default Flex (row)</h2>
         <div class="div1">
             <div class="circle1">1</div>
             <div class="circle2">2</div>
@@ -115,6 +137,9 @@
             <div class="circle5">5</div>
 
         </div>
+        </div>
+        <div>
+            <h2>2. Flex Direction: Column</h2>
         <div class="div2">
             <div class="circle1">1</div>
             <div class="circle2">2</div>
@@ -123,6 +148,9 @@
             <div class="circle5">5</div>
 
         </div>
+        </div>
+        <div>
+            <h2>3.Justify Content: Space-Between </h2>
         <div class="div3">
             <div class="circle1">1</div>
             <div class="circle2">2</div>
@@ -131,6 +159,9 @@
             <div class="circle5">5</div>
 
         </div>
+        </div>
+        <div>
+            <h2>4. Align Items: Center</h2>
         <div class="div4">
             <div class="circle1">1</div>
             <div class="circle2">2</div>
@@ -138,6 +169,34 @@
             <div class="circle4">4</div>
             <div class="circle5">5</div>
 
+        </div>
+        </div>
+        <div>
+            <h2>5. Flex Warap: Wrap</h2>
+        <div class="div4">
+            <div class="circle1">1</div>
+            <div class="circle2">2</div>
+            <div class="circle3">3</div>
+            <div class="circle4">4</div>
+            <div class="circle5">5</div>
+            <div class="circle1">6</div>
+            <div class="circle2">7</div>
+            <div class="circle3">8</div>
+            <div class="circle4">9</div>
+            <div class="circle5">10</div>
+
+        </div>
+        </div>
+        <div>
+            <h2>6. Align Content: Space-Around(with Wrap)</h2>
+        <div class="div4">
+            <div class="circle1">1</div>
+            <div class="circle2">2</div>
+            <div class="circle3">3</div>
+            <div class="circle4">4</div>
+            <div class="circle5">5</div>
+
+        </div>
         </div>
     </div>
 
