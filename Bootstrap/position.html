@@ -16,6 +16,8 @@
             margin: 0 auto;
             margin-top: 10px;
             padding: 0;
+            
+            
 
         }
         .div1{
@@ -35,7 +37,7 @@
             height: 100px; 
             width: 100px;
             background-color: yellow;
-            left: 200px;
+            left: 100px;
         }
         
         .div4{
@@ -56,7 +58,7 @@
 
 <body>
 
-    <div class="container position-relative">
+    <div class="container position-relative "> <!--If only the container of position absolute child given position relate the child will consider the container as the base for positioning other wise will consider body as base-->
         <div class="div1 position-static"></div>
         <div class="div2 position-relative"></div>
         <div class="div3 position-absolute"></div>
