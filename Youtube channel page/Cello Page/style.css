@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "inter",sans-serif;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+}
+
+
+.youtube-search-input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  max-width: 500px;
+}
+
+.youtube-search-group {
+  max-width: 600px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .youtube-search-group {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+.youtube-search-button {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  background-color: #f8f8f8;
+  border-color: #d1cfcf !important;
+  color: #333;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

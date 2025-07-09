@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -19,25 +19,42 @@
 
 <body>
     <header>
-        <nav>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg shadow-sm px-3" id="main-navbar">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" href="https://www.youtube.com/"> 
-                    <img src="./images/youtube-logo-2431.png" alt="youtube-logo" width="35px">
+                <a class="navbar-brand fw-bold" href="https://www.youtube.com/">
+                    <img class="mb-1 " src="./images/youtube-logo-2431.png" alt="youtube-logo" width="35px">
                     Youtube<sup><small class="text-secondary">IN</small></sup>
-                </a> 
-                <form class="" role="search">
-                    <input type="search">
-                    <button class="btn"></button>
-                </form>
-                <ul class="">
-                    <li>
-                        <a href=""><i class="fas fa-moon fa-lg" id="theme-icon"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" area-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse   p-2 " id="navbarSupportedContent">
+                    <form class="d-flex youtube-search-group mx-auto" role="search">
+                        <div class="input-group" >
+                            <input class="form-control youtube-search-input" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn youtube-search-button" type="submit"><i class="fas fa-search" ></i></button>
 
+                        </div>
+
+                    </form>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item" >
+                            <a class="nav-link" href="#" id="theme-toggle" aria-lablel="Toggle dark/ligh mode"> <i class="fas fa-moon fa-lg" id="theme-icon"></i> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" aria-lable="Upload video"><i class="fas fa-video"></i></a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
     </header>
+
 
 
 
@@ -47,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
         integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
         crossorigin="anonymous"></script>
-    <script src="./index.js"></script>    
+    <script src="./index.js"></script>
 
 </body>
 
