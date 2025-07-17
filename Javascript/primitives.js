@@ -33,7 +33,7 @@
 // console.log(username);
 
 
-let sm1 = Symbol('hitesh')
-let sm2 = Symbol('hitesh')
+// let sm1 = Symbol('hitesh')
+// let sm2 = Symbol('hitesh')
 
-console.log(sm1==sm2);
+// console.log(sm1==sm2);
