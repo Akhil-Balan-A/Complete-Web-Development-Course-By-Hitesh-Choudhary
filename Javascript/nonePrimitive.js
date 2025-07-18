@@ -103,7 +103,7 @@
 // console.log(var1); //5 will get printed
 // console.log(var2); //9 will get printed
 
-/////////////// copy of the array//////////////////////////
+/////////////// shallow of the array//////////////////////////
 
 // let popularTeas = ['green tea', 'oolong tea', 'chai'];
 
@@ -115,14 +115,47 @@
 // console.log(softCopyTeas);
 
 
-////////////////// hard copy without reference. //////////////
+////////////////// deep copy without reference. //////////////
 
-let topCities = ['berlin', 'singapore', 'new york'];
-let hardCopyCities = [...topCities];
+// let topCities = ['berlin', 'singapore', 'new york'];
+// let hardCopyCities = [...topCities];
 
-topCities.pop();
-console.log(topCities);
-console.log(hardCopyCities);
+// topCities.pop();
+// console.log(topCities);
+// console.log(hardCopyCities);
+
+// // but the above method will fail if there is nest objects.
+////////////////////add two array/////////////////
+// let europeanCities = ["Paris", "Rome"];
+// let asianCities = ["Tokyo", "Bangkok"];
+// let worldCities1 = [...europeanCities , ...asianCities];
+// console.log(worldCities1);
+
+// let worldCities2 = europeanCities.concat(asianCities);
+// console.log(worldCities1);
+
+////////////////////////find the length of the variable//////////////////////////
+
+// let teaMenu = ["Masala Chai", "Oolong Tea", "Green Tea", "Earl Grey Tea"];
+
+// let menuLength = teaMenu.length
+
+// console.log(menuLength);
+
+
+/////////////////////////////// is exists or not  ////////////////////////////////////
+
+// let cityBucketList = ["Kyoto", "London", "Cape Town", "Vancouver"];
+// let isLondonInList = cityBucketList.includes('London');
+
+// console.log(isLondonInList);
+
+
+
+
+
+
+
 
 
 

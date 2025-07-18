@@ -1,4 +1,7 @@
-for (let key in student) {
-  console.log(`${key} → ${student[key]}`);
-}
+let europeanCities = ["Paris", "Rome"];
+// let asianCities = ["Tokyo", "Bangkok"];
+// let worldCities1 = [...europeanCities , ...asianCities];
+// console.log(worldCities1);
 
+// let worldCities2 = europeanCities.concat(asianCities);
+// console.log(worldCities1);
