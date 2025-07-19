@@ -120,11 +120,205 @@
 
 ////////////////////////////////// Array Method #12 - some()//////////////////////////////////////
 
-let numbers = [1, 3, 5, 7];
+// let numbers = [1, 3, 5, 7];
 
-let hasEven = numbers.some((num) => {
-    num%2===0
-})
-console.log(hasEven);
+// let hasEven = numbers.some((num) => {
+//     num%2===0
+// })
+// console.log(hasEven);
+
+
+////////////////////////////////// Array Method #13 - every() //////////////////////////////////////
+
+// let products = [
+//   { name: "Monitor", price: 250 },
+//   { name: "Keyboard", price: 100 },
+//   { name: "Mouse", price: 50 }
+// ];
+
+// //chekc all the product price is under or equal to 300rs.
+
+// let result = products.every(product => (product.price) <= 300);
+
+// console.log(result);
+
+////////////////////////////////// Array Method #14 - find()//////////////////////////////////////
+
+
+// let products = [
+//   { name: "Pen", stock: 0 },
+//   { name: "Notebook", stock: 0 },
+//   { name: "Pencil", stock: 5 }
+// ];
+
+
+// //find first available product fromt the stock.
+
+
+// let result = products.find(product => product.stock > 0);
+
+// console.log(result.name);
+
+
+////////////////////////////////// Array Method #15 - findIndex()//////////////////////////////////////
+
+// let numbers = [10, 20, 30, 40];
+// //find the first element that satisfy the codition of number greater than 24 of its index.
+
+// let result = numbers.findIndex(num => num >= 25);
+// console.log(result);
+
+////////////////////////////////// Array Method #16 - filter()//////////////////////////////////////
+
+// let numbers = [10, 25, 30, 15, 40];
+
+// //fromthe above array filter number above 20.
+
+// let newArry = numbers.filter((num) => {
+    //     return num>20
+    // });
+    
+    // console.log(newArry);
+    
+
+////////////////////////////////// Array Method #17 - map()//////////////////////////////////////
+
+// let numbers = [1, 2, 3, 4, 5];
+
+// //make new array of squres of the above array elements
+
+// let doubled = numbers.map(num => num * num);
+// console.log(doubled);
+
+// let products = [
+    //   { name: "Monitor", price: 300 },
+    //   { name: "Mouse", price: 100 },
+    //   { name: "Keyboard", price: 200 }
+    // ];
+    
+    // let productNames = products.map(product => product.name);
+    
+    // console.log(productNames);
+    
+////////////////////////////////// Array Method #18 - reduce()//////////////////////////////////////
+
+// let numbers = [10, 20, 30];
+
+// //find sum of the array.
+
+// let sum = numbers.reduce((acc, curr) => acc + curr);
+
+// console.log(sum);
+
+// let products = [
+    //   { name: "Pen", price: 10 },
+    //   { name: "Book", price: 50 },
+    //   { name: "Bag", price: 100 }
+    // ];
+    
+    // //find sum of total items.
+    
+    // let total = products.reduce((acc, product) => {
+        //    return acc + product.price
+// },0);
+
+// console.log(total);
+
+
+////////////////////////////////// Array Method #19 - sort()//////////////////////////////////////
+
+// let fruits = ["banana", "apple", "mango"];
+
+// fruits.sort();
+
+// console.log(fruits);
+
+// let prices = [250, 100, 400, 50];
+// //sort in ascending order.
+
+// let copyPrices = prices.slice();
+
+// copyPrices.sort((a, b) => a - b);
+
+// console.log(copyPrices);
+// console.log(prices);
+
+
+////////////////////////////////// Array Method #20 - reverse()//////////////////////////////////////
+
+// let letters = ["a", "b", "c", "d"];
+
+// letters.reverse();
+// console.log(letters);
+
+////////////////////////////////// Array Method #21 - flat()//////////////////////////////////////
+
+// let arr = [1, 2, [3, 4]];
+
+// let newArray = arr.flat();
+
+// console.log(newArray);
+
+
+// let arr =  [1, [2, [3, [4, [5]]]]];
+// let newArray = arr.flat(Infinity);
+
+// console.log(newArray);
+
+
+////////////////////////////////// Array Method #22 - fill()//////////////////////////////////////
+// let arr = [1, 2, 3, 4, 5];
+
+// arr.fill(0);
+// console.log(arr);
+
+
+// let arr = [1, 2, 3, 4, 5];
+
+// arr.fill(9, 1, 4);
+// console.log(arr);
+
+////////////////////////////////// Array Method #22 - Array.from()//////////////////////////////////////
+
+// let str = 'Hello';
+
+// let chars = Array.from(str);
+// console.log(str);
+// console.log(chars);
+
+
+////////////////////////////////// Array Method #22 - forEach()//////////////////////////////////////
+
+// let num = [1, 2, 3];
+
+// num.forEach((num, i) => {
+    //     console.log(`Index ${i}: ${num}`);
+    
+    // });
+    
+    // let products = [
+        //   { name: "Pen", price: 10 },
+        //   { name: "Notebook", price: 50 }
+        // ];
+        
+        // products.forEach((products) => {
+            //     console.log(products.name);
+            
+            // });
+            
+
+////////////////////////////////// Array Method #23 - Set()//////////////////////////////////////
+
+// const myArray = [1, 2, 2, 3];
+
+// console.log(myArray);
+
+// const mySet = new Set([1, 2, 2, 3,4]);
+// console.log(mySet);
+
+// //convert my a array out of set.
+
+// const newArray = Array.from(mySet)
+// console.log(newArray);
 
 
