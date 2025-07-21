@@ -1,13 +1,16 @@
-let number = [1, 3, 5,7,9];
+// let arr = [1, 2, 2, 3, 4, 4, 5];
+// let uniqueArr = [...new Set(arr)];
 
-function isEven(num) {
-    return num%2===0
-}
+// console.log(uniqueArr);
 
-let result = number.some(isEven);
 
-console.log(result)
+let arr = [1, 2, 2, 3, 4, 4, 5];
 
+let mySet = new Set(arr);
+
+let uniqueArr = Array.from(mySet);
+
+console.log(uniqueArr);
 
 
 

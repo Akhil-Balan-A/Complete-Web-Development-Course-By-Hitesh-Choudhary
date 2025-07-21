@@ -104,28 +104,25 @@
 //////////////////////////////////////////////////// For/in ////////////////////////////////////////////
 //Use a 'for-in' loop to loop  through an object containing city populations. stop the loop when the population of 'Berlin' is found and store all previous cities populations in a new object named 'cityPopulations'.
 
-let citiesPopulation = {
-    'London': 8900000,
-    'New York': 8400000,
-    'Paris': 2200000,
-    'Berlin':3500000        
-}
-console.log(citiesPopulation);
+// let citiesPopulation = {
+//     'London': 8900000,
+//     'New York': 8400000,
+//     'Paris': 2200000,
+//     'Berlin':3500000        
+// };
 
-let cityPopulations = {}
+// let cityPopulations = {};
 
-for (let city in citiesPopulation) {
-    if (city === 'Berlin') {
-        break;
-    }
+// for (let city in citiesPopulation) {
+//     if (city === 'Berlin') {
+//         break;
+//     }
 
-    cityPopulations[city]=citiesPopulation[city]
-}
+//     cityPopulations[city]=citiesPopulation[city];
 
-console.log(cityPopulations);
+// }
 
-
-
+// console.log(cityPopulations);
 
 
 //////////////////////////////////////////////////// for/of ////////////////////////////////////////////
@@ -162,9 +159,3 @@ console.log(cityPopulations);
 
 // console.log(preferredTeas);
 
-
- 
-
-
-
-//////////////////////////////////////////////////// forEach ////////////////////////////////////////////
