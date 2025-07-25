@@ -108,7 +108,7 @@
 //     'London': 8900000,
 //     'New York': 8400000,
 //     'Paris': 2200000,
-//     'Berlin':3500000        
+//     'Berlin':3500000
 // };
 
 // let cityPopulations = {};
@@ -121,8 +121,10 @@
 //     cityPopulations[city]=citiesPopulation[city];
 
 // }
-
 // console.log(cityPopulations);
+
+
+
 
 
 //////////////////////////////////////////////////// for/of ////////////////////////////////////////////

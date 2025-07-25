@@ -13,7 +13,6 @@
 
 // console.log(keys);
 
-
 // 🧪count the keys of the below object.
 
 // let car = {
@@ -37,13 +36,11 @@
 // }
 // console.log(fruit.apple);
 
-
 // Object.keys(fruit).forEach((key) => {
 
 //     console.log(`${key}→${fruit[key]}`);
 
 // });
-
 
 ////////////////////////////// ✅ Object Method #2 – Object.values() ////////////////////////////
 
@@ -60,7 +57,6 @@
 
 //🧪 check if a user admin or not.
 
-
 // let user = {
 //     role: "admin",
 //     email: "user@example.com",
@@ -70,7 +66,6 @@
 // let isAdmin = Object.values(user).includes("admin")
 
 // console.log(isAdmin);
-
 
 ////////////////////////////// ✅ Object Method #3 – Object.entries() ////////////////////////////
 
@@ -106,11 +101,9 @@
 // let result = Object.entries(fruit);
 // console.log(result);
 
-
 // for (let [key, value] of Object.entries(fruit)) {
-    
+
 //     console.log(`${key} => ${value}`);
-    
 
 // }
 
@@ -169,10 +162,8 @@
 // car.model = 'Corolla';
 // console.log(car);// { brand: "Toyota", speed: 100 }
 
-
-
 //////////////// 🧪 Practice Problem B – Check if Frozen
-  //////////////
+//////////////
 
 // let user = { name: "Akhil" };
 // Object.freeze(user);
@@ -180,13 +171,13 @@
 // console.log(Object.isFrozen(user));
 
 //////////////// ✅ Object Method #6 – Object.seal()
- //////////////
+//////////////
 
 // let person = {
 //     name: "Akhil",
 //     age:30
 // };
- 
+
 // Object.seal(person);
 
 // person.age = 31;
@@ -195,15 +186,92 @@
 
 // console.log(person);
 
+//////////////// ✅ Object Method #7 – Object.hasOwnProperty()//////////////
 
-//////////////// ✅ Object Method #7 – Object.hasOwnProperty()
- //////////////
+// let user = {
+//   name: "Akhil",
+//   age: 30,
+// };
 
-let user = {
-    name: "Akhil",
-    age: 30
-};
+// console.log(user.hasOwnProperty("name"));
+// console.log(user.hasOwnProperty("email"));
 
-console.log(user.hasOwnProperty('name'))
-console.log(user.hasOwnProperty('email'));
+
+
+//////////////// ✅ Object Method #8 – Object.fromEntries()//////////////
+//use case reverse of object .entries()
+
+// const obj = { a: 1, b: 2 };
+// //convert the above object to entries
+// const entries = Object.entries(obj);
+// console.log(entries);
+
+// // convert the entries back to Object.
+// const result = Object.fromEntries(entries);
+
+// console.log(result);
+
+
+//////////////// ✅ Object Method #9 – Object.is() //////////////
+
+// if the tow objects are same or not.. not literaly but exactly
+
+// const result1 = Object.is(NaN === NaN);
+
+// console.log(result1);
+
+// const result2 = Object.is(+0 === -0);
+
+// console.log(result2);
+
+////////////////   ✅ Object Method #10 – Object.getOwnPropertyNames() //////////////
+
+// const user = {
+//   name: "Akhil",
+//   age:25
+// };
+
+// console.log(Object.getOwnPropertyNames(user));
+
+
+////////////////   ✅ Object Method #10 – Object.getOwnPropertyDescriptor() //////////////
+
+// const user = {
+//   name:"Akhil"
+// }
+
+// const descriptor = Object.getOwnPropertyDescriptor(user, "name");
+
+// console.log(descriptor);
+
+// /*{
+//   value: 'Akhil', - value of the key
+//   writable: true, - checks for any restriction on changig the value
+//   enumerable: true, - will the property show up in a loop like for...in or object.keys()?
+//   configurable: true - this property delted or its descriptors be modified?
+// }*/
+
+////////////////   ✅ Object Method #10 – Object.defineProperties() //////////////
+
+// Object.defineProperties(obj, {
+//   prop1: { value: val1, writable: true },
+//   prop2: { value: val2, writable: false }
+// })
+
+// const book = {};
+// Object.defineProperties(book, {
+//   title: {
+//     value: "JS Mastery",
+//     writable: true
+//   },
+//   price: {
+//     value: 500,
+//     writable: false
+//   }
+// });
+
+// book.title = "Advanced JS";
+// book.price = 1000; // ❌ won't change
+
+// console.log(book); // { title: "Advanced JS", price: 500 }
 
