@@ -25,7 +25,6 @@
 
 // console.log(selectedTeas);
 
-
 //Write a for loop that loops through the array "["London","New York","Paris","Berlin"]" and skips "Paris".
 //store the other cities in a new array named 'visitedCities'.
 
@@ -40,7 +39,6 @@
 // }
 // console.log(visitedCities);
 
-
 //////////////////////////////////////////////////// While Loop ////////////////////////////////////////////
 
 //find the sum of all the numbers from 1 to 100 using while loop.
@@ -51,7 +49,7 @@
 // while (i <= limit) {
 //     sum+=i
 //     i++
-    
+
 // }
 
 // console.log(sum);
@@ -94,12 +92,10 @@
 // do {
 //     sum += i;
 //     i++
-    
+
 // }while(i<=limit)
 
 // console.log(sum);
-
-
 
 //////////////////////////////////////////////////// For/in ////////////////////////////////////////////
 //Use a 'for-in' loop to loop  through an object containing city populations. stop the loop when the population of 'Berlin' is found and store all previous cities populations in a new object named 'cityPopulations'.
@@ -123,18 +119,31 @@
 // }
 // console.log(cityPopulations);
 
+//Only make new object with largest city fromthe below city object
+// let worldCities = {
+//     Sydney: 5000000,
+//     Tokyo: 9000000,
+//     Berlin: 3000000,
+//     Paris:2200000
+// };
 
+// let largeCitites = {};
 
+// for (let city in worldCities) {
+//     if (worldCities[city] < 3500000) {
+//         continue;
+//     }
+//     largeCitites[city] = worldCities[city]
+// }
 
+// console.log(largeCitites);
 
 //////////////////////////////////////////////////// for/of ////////////////////////////////////////////
-
 
 //Use a for-of loop to iterate through the array '[1,2,3,4,5]' and stop when the number '4' is found. Strore the numbers before '4' in an array named 'smallNumbers'.
 
 // let arr = [1,2,3,4,5]
 // let smallNumbers = [];
-
 
 // for (let element of arr) {
 //     if (element === 4) {
@@ -161,3 +170,64 @@
 
 // console.log(preferredTeas);
 
+//////////////////////////////////////////////////// forEach ////////////////////////////////////////////
+//make a new array witth all tea till chai (excluding) in a new array called 'availableTeas'
+// const teas = ["Earl grey", "green tea", "chai", "oolong tea"];
+
+// let availableTeas = [];
+// teas.forEach((tea) => {
+//   if (tea === "chai") {
+//     return;
+//   }
+//   availableTeas.push(tea);
+// });
+
+// console.log(availableTeas);
+
+//Write a 'forEach' loop that iterates through the array ["Berlin","Tokyo","Sydney","Paris"].
+//skip "Sydney" and store th other cities in a new array named "traveledCities".
+
+// const cities = ["Berlin", "Tokyo", "Sydney", "Paris"];
+
+// const traveledCities = [];
+// cities.forEach((city) => {  
+//     if (city === 'Sydney') {
+//         return;
+//     }
+//     traveledCities.push(city);
+// });
+
+// console.log(traveledCities);
+
+/////////////////////////// Sample Problems//////////////////////////////
+//write a for loop that iterates through the array [2,5,7,9]. skip the value '7' and multiply the rest by 2. Store the result in a new array named 'doubledNumbers'.
+
+// const arr = [2, 5, 7, 9];
+
+// const doubledNumbers = [];
+
+// for (let i = 0; i < arr.length; i++){
+//     if (arr[i] === 7) {
+//         continue;
+//     }
+//     doubledNumbers.push(arr[i]*2)
+// }
+
+// console.log(doubledNumbers);
+
+
+//Use a for-of loop to iterate through the arrayy "['chai','green tea','jasmin tea','herbal tree']". and stop when the length of the current tea name is greater than 10. store the teas iterated in a array  named 'shortTeas'.
+
+
+let teas = ['chai', 'green tea', 'jasmin tea', 'herbal tree'];
+let shortTeas = [];
+
+for (const tea of teas) {
+    if (tea.length > 10) {
+        break;
+    }
+    shortTeas.push(tea)
+
+}
+
+console.log(shortTeas);

@@ -1,4 +1,1 @@
-Object.getOwnPropertyDescriptor()
-// Object.getOwnPropertyDescriptors()
-// Object.getOwnPropertySymbols()
-// Object.defineProperty()
+// window.name = 'Balan'
