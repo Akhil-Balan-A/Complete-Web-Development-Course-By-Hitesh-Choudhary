@@ -1,3 +1,6 @@
-if(!new.target) {
-    //     throw new Error('use new keyword');
-    // }
+// OOPS in JS
+// Abstraction  - Hiding the implementation
+
+// Polymorphism - Multiple forms
+// Inheritance  - Reusability
+// Encapsulation - Hiding the data
