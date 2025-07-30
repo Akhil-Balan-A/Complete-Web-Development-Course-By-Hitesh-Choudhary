@@ -1,6 +1,13 @@
-// OOPS in JS
-// Abstraction  - Hiding the implementation
+ get salary() {
+        return `You are not allowed to see the salary ${this._salary}`;
+    }
 
-// Polymorphism - Multiple forms
-// Inheritance  - Reusability
-// Encapsulation - Hiding the data
+    set salary(value) {
+
+        if (value < 0) {
+            console.error("Invalid Salary");
+        } else {
+            this._salary = value;
+        }
+        
+    }
