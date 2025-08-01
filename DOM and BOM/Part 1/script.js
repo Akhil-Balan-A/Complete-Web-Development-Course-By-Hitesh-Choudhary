@@ -1,35 +1,42 @@
-//Select by ID
+document.getElementById('changeTextButton').addEventListener('click', function() {
+    const myParagraph = document.getElementById('myParagraph');
+    myParagraph.textContent = 'The paragraph has been changed!';
+});
 
-let title = document.getElementById('main-title');
-console.log(title.textContent);
-title.textContent = 'Hi DOM';
+document.getElementById('highlightFirstCity').addEventListener('click', () => {
+    const ul = document.getElementById('citiesList');
+    ul.lastElementChild.classList.toggle('highlight');
+});
+let count = 0;
+let btn = document.getElementById('changeOrder')
+    btn.addEventListener('click', () => {
+    count++
+    const coffeeOrder = document.getElementById
+        ('coffeeOrder');
+    if (count % 2 === 1) {
+        coffeeOrder.firstElementChild.textContent = 'Espresso';
+        btn.innerText = 'Change Order to Latte';
+        
+    } else {
+        // coffeeOrder.firstElementChild.textContent = 'Latte'
+        location.reload();
+    }
+    })
 
-//Select by class
+//Example 4 solution
+let listBtn = document.getElementById('addNewItem');
+listBtn.addEventListener('click', () => {
+    const list = document.getElementById('shoppingList');
+    const newItem = document.createElement('li')
+    newItem.innerText = 'Cheese';
+    list.appendChild(newItem);
+});
 
-let message = document.getElementsByClassName("message");
-console.log(message[0].textContent);
-console.log(message[1].textContent);
-message[0].innerHTML = "Paragraph one" 
-message[1].innerHTML = "Paragraph two"
+// Example 5 solution
+let removeBtn = document.getElementById('removeLastTask');
+removeBtn.addEventListener('click', () => {
+    let element = document.getElementById('taskList')
+    element.lastElementChild.remove();
 
-let links = document.getElementsByClassName('link');
-console.log(links[0].textContent)//Link 1
-console.log(links[1].innerText)// Link 2
-links[0].textContent = "first link"
-links[1].innerHTML = "second link"
-links[0].href = "https://google.com"
-links[1].href = "https://youtube.com"
+})
 
-// select tab by tag name
-let buttons = document.getElementsByTagName("button");
-console.log(buttons[0].textContent);
-buttons[0].textContent = "click here";
-
-// select by queryselector
-let Para = document.querySelector('.message');
-console.log(Para.innerText)
-
-//select by queryselectorAll
-let Paras = document.querySelectorAll(".message");
-console.log(Paras[0].innerText)
-console.log(Paras[1].innerText);
