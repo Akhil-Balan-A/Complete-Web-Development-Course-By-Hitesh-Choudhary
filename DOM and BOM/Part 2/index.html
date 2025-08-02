@@ -18,8 +18,12 @@
         text-align: center;
         line-height: 50px;
       }
-      .teaHighlight{
+      .teaHighlight {
         background-color: red;
+      }
+      .highlight{
+        background-color: yellow;
+        color: red
       }
     </style>
   </head>
@@ -37,11 +41,39 @@
         <li class="teaItem">Green Tea</li>
         <li class="teaItem">Black Tea</li>
         <li class="teaItem">White Tea</li>
+        <li class="coffeeItem">Coffee</li>
       </ul>
       <p>Click on any tea to select it!</p>
     </section>
 
-    <!-- Example 3:-->
-   <script src="./script.js"></script>
-   </body>
-   </html>
+    <!-- Example 3: Form  Handling-->
+    <section id="example-8">
+      <h2>Form Handling</h2>
+      <form action="" id="feedbackForm">
+        <label for="feedbackInput">Your Feedback:</label>
+        <input
+          type="text"
+          id="feedbackInput"
+          placeholder="Enter Feedback"
+          name="feedback"
+        />
+        <button type="submit">Submit Feedback</button>
+      </form>
+      <p id="feedbackDisplay"></p>
+    </section>
+    
+    <!-- Example 4: DOM Content Loaded -->
+     <section id="example-4">
+         <h2>DOM Content Loaded</h2>
+         <p id="domStatus">Waiting for DOM to load...</p>
+     </section>
+
+    <!--Example 5: CSS Class Manipulation -->
+    <section id="example-5">
+      <h2>CSS Class Manipulation</h2>
+      <p id="descriptionText">This text will change color!</p>
+      <button id="toggleHighlight">Toggle Highlight</button>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>
