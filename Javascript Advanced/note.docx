@@ -1,0 +1,18 @@
+1. everything in javascript happen in the exectuion context
+
+2. variable environment(memory combonent - inlclude variables and functions) , thread of execution(whole code is executed here)
+
+3. javascript is synchronous nad single threaded language
+
+4. javascript is a dynamic language - no need to define the data type or weakly type language.
+
+5. javascript is a case sensitive language
+
+6. javascript is a garbage collected language
+
+7. javascript is a interpreted language
+
+8. javascript is a prototype based language
+
+9. javascript is a single threaded language
+
