@@ -1,22 +1,17 @@
-var x = 1;
-
-const c = a();
-const d = b();
-
-console.log(c==d)
-
-console.log(x )
-
-function a() {
-    
-    var x = 10;
-    
-    console.log(x);
-    return x;
+// Task 2
+function Shape(color) {
+    this.color = color;
+}
+Shape.prototype.getColor=function(){
+    return `The color is ${this.color}`
 }
 
-function b() {
-    var x = 10
-    console.log(x)
-    return 10;
+
+function Rectangle(width, height, color) {
+    this.width = width;
+    this.height = height;
+    this.color = color;
+}
+Rectangle.prototype.getArea = function(){
+    return 
 }
