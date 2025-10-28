@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    //-----------------login form-----------------//
+
+    <h1>Login</h1>
+    <form>
+        <label for="email">Enter your Email:</label>
+        <input type="email">
+        <br>
+        <label for="passwrod">Enter your Password:</label>
+        <input type="password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    //-----------------Feedback form-----------------//
+
+    <h1>Feedback</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email">
+        <br>
+        <label for="feedback">Feedback:</label>
+        <br>
+        <textarea name="feedback" id="feedback" cols="50" rows="10" placeholder="Enter your feedback"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    //-----------------Gender selection-----------------//
+
+    <h1>Gender</h1>
+    <form>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male">
+        <br>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female">
+        <br>
+        <label for="other">Other</label>
+        <input type="radio" name="gender" id="other">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    //----------------Hobbies Selection-----------------//
+
+    <h1>Hobbies</h1>
+    <form>
+        <label for="Drawing">Drawing</label>
+        <input type="checkbox" name="Hobbie" id="Drawing">
+        <br>
+        <label for="Singing">Singing</label>
+        <input type="checkbox" name="Hobbie" id="Singing">
+        <br>
+        <label for="other">Other</label>
+        <input type="checkbox" name="Hobbie" id="other">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    //----------------- Language Selection dropdown-----------------//
+
+    <h1>Language</h1>
+    <form>
+        <select name="Language" id="Language">
+            <option value="" disabled>Select Language</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Gujarati">Gujarati</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    //----------------- File Upload-----------------//
+
+    <h1>File Upload</h1>
+    <form>
+        <input type="file">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    //-----------------Month Selection-----------------//
+
+    <h1>Month</h1>
+    <form>
+        <input type="month">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    //-----------------Color Picker-----------------//
+
+    <h1>Color Picker</h1>
+    <form>
+        <input type="color" name="Color" id="Color" value="#ff0000">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
