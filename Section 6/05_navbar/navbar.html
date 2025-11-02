@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbars</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333;
+            color: white;
+           
+        }
+        .nav-container{
+            margin: 20px 0px;
+            
+        }
+        .new-movie{
+            background-color: lightblue;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .new-movie::after{
+            content: "New";
+            background-color: red;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .nav-1{
+            background-color: lightgreen;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-1 h1{
+            color: blue;
+        }
+        .nav-1 ul{
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+
+        }
+        .nav-1 li{
+            color: blue;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative; 
+           
+        }
+       
+        .nav-1 button{
+            background-color: rgb(57, 196, 173);
+            padding : 5px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+            border: 1px solid gray;  
+            
+        }
+        .nav-1 button:hover{
+            background-color: rgb(20, 202, 173);
+        }
+        .nav-1 a {
+            text-decoration: none;
+            color: blue;
+            position: relative;
+        } 
+        .nav-1 a:hover{
+            text-decoration: underline;
+        }  
+        .nav-1 a::after{
+            content: "🤵";
+            position: absolute;
+            bottom: 1px;
+        }
+     
+        .nav-1 a:hover::after{
+             content: "🕵️‍♂️";
+             transition: width 0.9s ease-in-out;
+        }
+        .nav-container-2{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            
+        }
+        .nav-2{
+            background-color: rgb(73, 73, 169);
+            padding : 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 200px;
+            flex: 1;
+            
+        }
+        .nav-2 ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: start;
+            width: 100%;
+        }
+        .nav-2 a{
+            text-decoration: none;
+            color: rgb(152, 169, 255);
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+        }
+        .nav-2 a:hover{
+            text-decoration: underline;
+        }
+        .nav-2 button{
+            background-color: rgb(57, 196, 173);
+            padding : 5px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+            border: 1px solid gray;  
+        }
+        .nav-2 li:hover{
+            background: #000;
+            padding: 5px;
+            border-radius: 5px; 
+        }
+        .nav-2 button:hover{
+            background-color: rgb(20, 202, 173);
+        }
+        .nav-container-3{
+            height: 100vh;
+        }
+        .nav-3{
+            background-color: rgb(226, 131, 43);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .nav-3 ul{
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+        }
+        .nav-3 a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+        }
+        .dropdown-content{
+            display: none;
+        }
+        .about:hover .dropdown-content{
+            display: block;
+            position: absolute;
+            background-color: rgb(95, 148, 95);
+            padding: 5px;
+            border-radius: 5px;
+
+        }
+        .dropdown-content a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .dropdown-content a:hover{
+            text-decoration: none;
+                        border: 2px solid black;
+                        background-color: green;
+
+        }
+
+
+        
+                 
+
+    </style>
+</head>
+<body>
+    <p class="new-movie">Lokh chapter 2</p>
+
+    <div class="nav-container">
+        <h2>Variation 1: Horizontal with underline effect</h2>
+        <nav class="nav-1">
+            <div>
+                <h1>Brand name</h1>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#"> Home </a></li>
+                    <li><a href="#"> About </a></li>
+                    <li><a href="#"> Contact </a></li>
+                    <li><a href="#"> Blog </a></li>
+                    <button>Login</button>
+                </ul>
+            </div>
+        </nav>
+
+
+    </div>
+    <div class="nav-container-2">
+        <h2>Variation 2: Vertical with hover effect</h2>
+        <nav class="nav-2">
+            <div>
+                <h1>Brand name</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#"> Home </a></li>
+                    <li><a href="#"> About </a></li>
+                    <li><a href="#"> Contact </a></li>
+                    <li><a href="#"> Blog </a></li>
+                    <button>Login</button>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+    <div class="nav-container-3">
+        <h2>Variation 3: Horizontal nav bar with dropdown</h2>
+        <nav class="nav-3">
+            <div>
+                <h1>Brand name</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#"> Home </a></li>
+                    <li class="about">
+                        <a href="#" > About </a>
+                        <div class="dropdown-content">
+                            <a href="#"> Our Story </a>
+                            <a href="#"> Team </a>
+                            <a href="#"> Carrers </a>
+                        </div>
+                    </li>
+                    <li><a href="#"> Contact </a></li>
+                    <li><a href="#"> Blog </a></li>
+                    <button>Login</button>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</body>
+</html>

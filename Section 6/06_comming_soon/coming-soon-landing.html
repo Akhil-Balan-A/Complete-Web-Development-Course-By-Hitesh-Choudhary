@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai Bazaar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #8a2be2, #4a00e0);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-font-smoothing: antialiased;
+      }
+      .container {
+        background-color: white;
+        /* margin: 20px; */
+        border-radius: 15px;
+        padding: 20px;
+        width: 100%;
+        max-width: 420px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+      }
+      img {
+        border-radius: 15px;
+        width: 100%;
+      }
+      h1,
+      p {
+        margin: 10px;
+        word-wrap: break-word;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 10px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      h1 {
+        font-size: 2rem;
+        color: #4a00e0;
+      }
+      p {
+        font-size: 1.2rem;
+        color: #4a00e0;
+      }
+      input {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        background-color: #afb2ec;
+        font-size: 1rem;
+        max-width: 250px;
+        width: 100%;
+        transition: background-color 0.3s ease, outline 0.3s ease;
+
+      }
+      button {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: none;
+        background-color: #5c62e0;
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        max-width: 100px;
+        width: 100%;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #1d2171;
+      }
+      @media (max-width: 400px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+        .container {
+          margin: 10px;
+          padding: 15px;
+        }
+        input,
+        button {
+          font-size: 0.9rem;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      input:focus{
+        outline: 2px solid #4a00e0; ;
+        background-color: #d8dbfa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="./chai-logo.jpg" alt="chai-logo" width="400px" />
+      <h1>Coming Soon</h1>
+      <p>We are working on something awesome, stay tuned</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">Notify Me</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Master Class</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 20px;
+        background-color: #e6e6e6;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #2c3e50;
+      }
+
+      .container {
+        background: white;
+        border: 2px solid black;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+
+      .grid-container {
+        display: grid;
+        border: 2px solid #c0392b;
+        background-color: #dfe6e9;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3498db;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 20px;
+        border-radius: 6px;
+      }
+
+      .item:nth-child(even) {
+        background-color: #e74c3c;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      p {
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      /* For visibility */
+      .grid-container > div {
+        min-height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎯 CSS Grid Playground — Test Cases</h1>
+
+    <!-- 1️⃣ Basic Grid -->
+    <div class="container">
+      <h2>1. Basic Grid (3x3)</h2>
+      <p>Simple 3x3 grid using <code>repeat()</code> and fixed row height.</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(3, 100px);
+        "
+      >
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+      </div>
+    </div>
+
+    <!-- 2️⃣ Unequal Column Sizes -->
+    <div class="container">
+      <h2>2. Unequal Column Sizes</h2>
+      <p>Columns grow proportionally: 1x, 2x, 4x, 8x.</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: 1fr 2fr 4fr 8fr;
+          grid-template-rows: 100px;
+        "
+      >
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+
+    <!-- 3️⃣ Grid with gaps -->
+    <div class="container">
+      <h2>3. Grid with Gaps</h2>
+      <p>
+        Makes gap between grid items, it wont affect column width or row height
+        and padding outside grid items
+      </p>
+      <div
+        class="grid-container"
+        style="grid-template-columns: repeat(3, 1fr); gap: 20px"
+      >
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+      </div>
+    </div>
+
+    <!-- 4️⃣ Grid item placement -->
+    <div class="container">
+      <h2>4. Grid Item placement (explicit)</h2>
+      <p>
+        Space between grid items. Basically it will grow a box vertically or
+        horizontally
+      </p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(6, 100px);
+        "
+      >
+        <div class="item" style="grid-column: 1/3">1</div>
+        <div class="item" style="grid-column: 3/4; grid-row: 1/3">2</div>
+        <div class="item" style="grid-column: 1/2; grid-row: 2/4">3</div>
+        <div class="item">4</div>
+        <div class="item" style="grid-column: 2/4; grid-row: 3/7">5</div>
+        <div class="item" style="grid-column: 1/2; grid-row: 4/7">6</div>
+      </div>
+    </div>
+
+    <!-- 5️⃣ Grid Template Areas  -->
+    <div class="container">
+      <h2>5. Grid Template Areas</h2>
+      <p>Using <code>grid-template-areas</code> for layout design.</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-areas: 'header header header header' 'sidebar main main main' 'sidebar main main main' 'sidebar main main main' 'footer footer footer footer';
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(5, 100px);
+        "
+      >
+        <div class="item" style="grid-area: header">Header</div>
+
+        <div class="item" style="grid-area: sidebar">Sidebar</div>
+
+        <div class="item" style="grid-area: main">Main Content</div>
+
+        <div class="item" style="grid-area: footer">Footer</div>
+      </div>
+    </div>
+
+    <!-- 6️⃣ Auto-fit and Minmax -->
+    <div class="container">
+      <h2>6. Auto-Fit and Minmax</h2>
+      <p>Using <code>minmax()</code> and <code>auto-fit</code>.</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          grid-template-rows: repeat(4, 100px);
+          grid-auto-rows: 100px; 
+         
+        "
+      >
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item">16</div>
+        <div class="item">17</div>
+        <div class="item">18</div>
+        <div class="item">19</div>
+        <div class="item">20</div>
+        <div class="item">21</div>
+        <div class="item">22</div>
+        <div class="item">23</div>
+        <div class="item">24</div>
+        <div class="item">25</div>
+        <div class="item">26</div>
+        <div class="item">27</div>
+        <div class="item">28</div>
+        <div class="item">29</div>
+        <div class="item">30</div>
+        <div class="item">31</div>
+        <div class="item">32</div>
+        <div class="item">33</div>
+        <div class="item">34</div>
+        <div class="item">35</div>
+        <div class="item">36</div>
+        <div class="item">37</div>
+        <div class="item">38</div>
+        <div class="item">39</div>
+        <div class="item">40</div>
+        <div class="item">41</div>
+        <div class="item">42</div>
+        <div class="item">43</div>
+        <div class="item">44</div>
+        <div class="item">45</div>
+        <div class="item">46</div>
+        <div class="item">47</div>
+        <div class="item">48</div>
+        <div class="item">49</div>
+        <div class="item">50</div>
+        <div class="item">51</div>
+        <div class="item">52</div>
+        <div class="item">53</div>
+        <div class="item">54</div>
+        <div class="item">55</div>
+        <div class="item">56</div>
+        <div class="item">57</div>
+        <div class="item">58</div>
+        <div class="item">59</div>
+        <div class="item">60</div>
+        <div class="item">61</div>
+        <div class="item">62</div>
+        <div class="item">63</div>
+        <div class="item">64</div>
+        <div class="item">65</div>
+        <div class="item">66</div>
+        <div class="item">67</div>
+        <div class="item">68</div>
+        <div class="item">69</div>
+        <div class="item">70</div>
+        <div class="item">71</div>
+        <div class="item">72</div>
+        <div class="item">73</div>
+        <div class="item">74</div>
+        <div class="item">75</div>
+        <div class="item">76</div>
+        <div class="item">77</div>
+        <div class="item">78</div>
+        <div class="item">79</div>
+        <div class="item">80</div>
+        <div class="item">81</div>
+        <div class="item">82</div>
+        <div class="item">83</div>
+        <div class="item">84</div>
+        <div class="item">85</div>
+        <div class="item">86</div>
+        <div class="item">87</div>
+        <div class="item">88</div>
+        <div class="item">89</div>
+        <div class="item">90</div>
+        <div class="item">91</div>
+        <div class="item">92</div>
+        <div class="item">93</div>
+        <div class="item">94</div>
+        <div class="item">95</div>
+        <div class="item">96</div>
+        <div class="item">97</div>
+        <div class="item">98</div>
+        <div class="item">99</div>
+        <div class="item">100</div>
+      </div>
+    </div>
+
+    <!-- 7️⃣ Alignment and Justification -->
+    <div class="container">
+      <h2>7. Alignment and Justification</h2>
+      <p>Grid items can be aligned and justified.</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: repeat(3, 1fr);
+          height: 400px;
+          align-content: center;
+          justify-content: center;
+          grid-auto-rows: 100px;
+        "
+      >
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+      </div>
+    </div>
+
+    <!-- 8️⃣ Span Items -->
+    <div class="container">
+      <h2>8. Grid Item Spanning</h2>
+      <p>Items can span multiple columns or rows.</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(3, 100px);
+        "
+      >
+        <div class="item" style="grid-column: span 2">Span 2 cols</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item" style="grid-row: span 2">Span 2 rows</div>
+        <div class="item">5</div>
+        <div class="item" style="grid-column: span 2; grid-row: span 2">6</div>
+        <div class="item">7</div>
+      </div>
+    </div>
+
+    <!-- 9️⃣Nested Grids -->
+    <div class="container">
+      <h2>9. Nested Grids</h2>
+      <p>Nested grids and it's control.</p>
+      <div class="grid-container" 
+      style="grid-template-columns: repeat(2, 1fr);height: 400px;
+        align-content: center; 
+      ">
+        <div class="item">1</div>
+        <div class="grid-container" style="grid-template-columns: repeat(2, 1fr);
+        ">
+          <div class="item" style="background-color: green;">2.1</div>
+          <div class="item" style="background-color: green;">2.2</div>
+          <div class="item" style="background-color: green;">2.3</div>
+          <div class="item" style="background-color: green">2.4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔟 Grid with Auto Rows -->
+    <div class="container">
+      <h2>10. Grid with Auto Rows</h2>
+      <p>Will control the height of the implicit rows automatically so that all the new rows are the same height as default</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+          grid-template-rows: repeat(2, 200px);
+          grid-auto-rows: 200px ;
+        "
+      >
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+      </div>
+    </div>
+
+    <!-- 11️⃣ Justify / Align Items Individually -->
+    <div class="container">
+      <h2>11. Individual Item Alignment</h2>
+      <p>Each grid item can align itself independently.</p>
+      <div
+        class="grid-container"
+        style="
+          grid-template-columns: repeat(3, 100px);
+          grid-template-rows: repeat(3, 100px);
+        "
+      >
+        <div class="item" style="justify-self: start; ">Start</div>
+        <div class="item" style="justify-self: center ">Center</div>
+        <div class="item" style="justify-self: end">End</div>
+        <div class="item" style="align-self: start">Top</div>
+        <div class="item" style="align-self: center">Middle</div>
+        <div class="item" style="align-self: flex-end">Bottom</div>
+      </div>
+    </div>
+
+    <!-- 12️⃣ Implicit Rows -->
+    <div class="container">
+      <h2>12. Implicit Rows</h2>
+      <p>Extra items create implicit rows automatically.</p>
+      <div
+        class="grid-container"
+        style="grid-template-columns: repeat(3, 100px); grid-auto-rows: 80px"
+      >
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+  </body>
+</html>

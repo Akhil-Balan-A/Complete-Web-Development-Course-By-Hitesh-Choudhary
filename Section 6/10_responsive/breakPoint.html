@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design</title>
+    <style>
+      .responsive-div {
+        background-color: gray;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+      }
+      @media (max-width: 480px) {
+        .responsive-div {
+          background-color: red;
+        }
+      }
+      @media (min-width: 481px) and (max-width: 767px) {
+        .responsive-div {
+          background-color: green;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .responsive-div {
+          background-color: blue;
+        }
+      }
+      @media (min-width: 1024px) and (max-width: 1439px) {
+        .responsive-div {
+          background-color: yellow;
+        }
+      }
+      @media (min-width: 1440px) {
+        .responsive-div {
+          background-color: orange;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="responsive-div">
+      <h3>This div changes color based on the screen size</h3>
+      <ol>
+        <li>up to 480px - red</li>
+        <li>481px to 767px - green</li>
+        <li>768px to 1023px - blue</li>
+        <li>1024px to 1439px - yellow</li>
+        <li>1440px and above - orange</li>
+      </ol>
+    </div>
+  </body>
+</html>

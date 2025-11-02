@@ -1,0 +1,7 @@
+h2{
+    color: red; /*wont workd this style since internal style has more weightage*/
+}
+p{
+    color: purple;
+    font-weight: bold;
+}

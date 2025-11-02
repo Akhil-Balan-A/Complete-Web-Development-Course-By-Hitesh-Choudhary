@@ -8,5 +8,5 @@ Current AI hype in the market
 Current job market trends and Salaries offered and skills required
 # 5. What tools you need for web development
 What tools you need for web development
-# 6. How to setup your code edit
+# 6. How to setup your code editor
 How to setup your code editor VS Code

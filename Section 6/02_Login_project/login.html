@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #1a1a1a;
+            color: white;
+            height: 100vh;
+            display: flex;            
+        }
+        .section-1{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:rgb(121, 23, 121); ;
+        }
+        .section-2{
+            flex:50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(27, 138, 134);;
+        }
+        
+        
+        .card-1{
+            background-color: rgb(27, 138, 134);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+        .card-2{
+            background-color: rgb(121, 23, 121);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 15px;
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+        button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #5c62e0;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: #1d2171;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <section class="section-1">
+        <div class="card-1">
+        <h2>Login</h2>
+        <form >
+            <input type="email" placeholder="Enter your Eamil">
+            <input type="password" placeholder="Enter your Password">
+            <button type="submit">Login</button>
+        </form>
+
+    </div>
+    </section >
+    <section class="section-2">
+        <div class="card-2">
+        <h2>Sign Up</h2>
+        <form >
+            <input type="text" placeholder="Enter your Full Name">
+            <input type="email" placeholder="Enter your Email ">
+            <input type="password" placeholder="Enter your Password">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    
+    </section>
+    
+        
+</body>
+</html>
