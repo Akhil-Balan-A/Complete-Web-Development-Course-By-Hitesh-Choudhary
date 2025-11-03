@@ -40,6 +40,15 @@ Grid layout introduction
 # 29. Grid Masterclass
 All about grid
 
-# 30.
-# 31.
+# 30. Assignment to build cards from codepen
+simple product card to build
+
+# 31. Breakpoints for mobile tablet and web
+All about breakpoints like 640px, 768px, 1024px, 1280px, 1536px, 1920px using media queries
+
+# 32. Hands on Bootstrap integration 
+Intro to Bootstrap integration and using classes to style the page
+
+# 33. Assignment - Build a complete youtube page.
+Build a complete youtube profile page
 
