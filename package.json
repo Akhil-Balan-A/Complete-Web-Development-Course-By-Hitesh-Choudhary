@@ -1,0 +1,22 @@
+{
+  "name": "complete-web-development-course-by-hitesh-choudhary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhil-Balan-A/Complete-Web-Development-Course-By-Hitesh-Choudhary.git"
+  },
+  "author": "Akhil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akhil-Balan-A/Complete-Web-Development-Course-By-Hitesh-Choudhary/issues"
+  },
+  "homepage": "https://github.com/Akhil-Balan-A/Complete-Web-Development-Course-By-Hitesh-Choudhary#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
