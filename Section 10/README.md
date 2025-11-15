@@ -75,7 +75,9 @@ Different loops in javascript
 solving 6 loop challenges.
 
 # 52. Ten loop challenges to learn all kind of loops in javascript
+level up loop based challenges
 
 # 53. Function, arrow function, THIS and context in javascript
+function related study
 
 # 54. Higher order function and nested functions in javascript

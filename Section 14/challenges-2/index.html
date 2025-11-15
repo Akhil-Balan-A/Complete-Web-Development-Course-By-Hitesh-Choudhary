@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenges-2</title>
+    <style>
+      body {
+        background-color: black;
+        text-align: center;
+        color: white;
+      }
+      section {
+        border: 10px solid white;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .highlight{
+        background-color:yellow;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <!--Example 6: Event Handling in the DOM-->
+    <section id="example-6">
+      <h2>Event Handling in the DOM</h2>
+      <button id="clickMeButton">Click Me!</button>
+    </section>
+
+    <!--Example 7: Event Delegation-->
+    <section id="example-7">
+      <h2>Event Delegation</h2>
+      <ul id="teaList">
+        <li
+          class="teaItem"
+          style="border: 2px solid white;"
+        >
+          Green Tea
+        </li>
+        <li
+          class="teaItem"
+          style="border: 2px solid white;"
+        >
+          Black Tea
+        </li>
+        <li
+          class="teaItem"
+          style="border: 2px solid white;"
+        >
+          Oolong Tea
+        </li>
+      </ul>
+    </section>
+
+    <!--Example 8: Form Handling-->
+    <section id="example-8">
+        <h2>Form Handling</h2>
+        <form id="feedbackForm">
+            <label for="feedbackInput">Your Feedback:</label>
+            <input type="text" id="feedbackInput" placeholder="Enter Feedback">
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <p id="feedbackDisplay"></p>
+    </section>
+    <!--Example 9: Dom Content Loaded-->
+    <section id="example-9">
+        <h2>Dom Content Loaded</h2>
+        <p id="domStatus"> Waiting for DOM to load...</p>
+    </section>
+
+    <!--Example 10: CSS classes manipulation-->
+    <section id="example-10">
+        <h2>CSS classes manipulation</h2>
+        <p id="descriptionText">This text will change color!</p>
+        <button id="toggleHighlight">Highlight</button>
+    </section>
+
+    <script>
+      //--> Example 6: Event Handling in the DOM
+      const btn = document.getElementById("clickMeButton");
+      btn.addEventListener("volumechange", () => {
+        alert("Hello World");
+      });
+
+      //--> Example 7: Event Delegation
+      const teaList = document.getElementById("teaList");
+      teaList.addEventListener("click", (event) => {
+            alert(event.target.textContent);
+      });
+
+      //--> Example 8: Form Handling.
+      const feedbackForm = document.getElementById("feedbackForm");
+      feedbackForm.addEventListener("submit",(event)=>{
+        event.preventDefault();
+        const feedbackInput = document.getElementById("feedbackInput");
+        const feedbackDisplay = document.getElementById("feedbackDisplay");
+        feedbackDisplay.textContent = feedbackInput.value
+      })
+
+      //--> Example 9: Dom Content Loaded
+      document.addEventListener("DOMContentLoaded",()=>{
+        const domStatus = document.getElementById("domStatus");
+          domStatus.textContent = "DOM Loaded";
+      });
+
+      //--> Example 10: CSS classes manipulation.
+      const toggleHighlight = document.getElementById("toggleHighlight");
+      let toggle = false
+      toggleHighlight.addEventListener('click',()=>{
+          
+       const text = document.getElementById("descriptionText");
+      
+       text.classList.toggle("highlight"); 
+     
+      })
+      
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Page Title</h1>
+    <button id="reload">Reload Page</button>
+
+    <script>
+      // DOM → Access elements
+      const title = document.getElementById("title");
+      title.style.color = "blue";
+      title.textContent = "Welcome Akhil 🚀";
+
+      // BOM → Browser features
+      console.log(location.href); // current page URL
+
+      const btn = document.getElementById("reload");
+      btn.addEventListener("click", () => {
+        location.reload(); // BOM action (reloads browser)
+      });
+    </script>
+<script defer src="./script.js"></script>
+  </body>
+</html>

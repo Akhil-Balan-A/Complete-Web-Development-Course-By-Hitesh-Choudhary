@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Close Message</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+
+      #message {
+        display: none;
+        background: #333;
+        padding: 15px 25px;
+        border-radius: 8px;
+        font-size: 18px;
+      }
+
+      #btn {
+        margin-top: 20px;
+        padding: 15px 25px;
+        border-radius: 8px;
+        background: #333;
+        color: white;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">Hello World 👋</div>
+    <button id="btn">Click to Relaod the Page</button>
+
+    <p id="paragraph">
+      This is a paragraph <span style="display: none">this is a span tag</span>
+    </p>
+
+    <section>This is a section</section>
+
+    <h3>This is a heading</h3>
+
+    <h2>This is a heading</h2>
+
+    <button id="testBtn">click Me</button>
+
+    <div id="example-2">
+      <h2>Traversing 3the DOM</h2>
+      <ul id="cityList">
+        <li id="city" class="city-1">New Yourk</li>
+        <li id="city" class="city-2">London</li>
+        <li id="city" class="city-3">Paris</li>
+        <li id="city" class="city-4">Tokyo</li>
+      </ul>
+      <button id="highlightFirstCity">highlight first city</button>
+    </div>
+
+    <!--Manipulating DOM Element-->
+    <div id="example-3">
+      <h2>Manipulating DOM Element</h2>
+      <div id="coffeeOrder">Order: <span id="cofeeType">Latte</span> </div>
+      <button id="changeOrder">Change Order to Espresso</button>
+    </div>
+
+    <!--Creating and inserting elements-->
+    <div id="example-4">
+      <h2>Creating and inserting elements</h2>
+      
+        <input type="text" id="newItem" placeholder="Enter a new item">
+        <button type="submit" id="addNewItem">Add a new item to the shopping list</button>
+      
+      <ul id="shoppingList">
+        <li>Milk</li>
+        <li>Butter</li>
+
+      </ul>
+    </div>
+
+
+    <script>
+      //--> Hide automatically after 3 sec
+      setTimeout(() => {
+        const msg = document.getElementById("message");
+        msg.style.display = "inline-block";
+
+        setTimeout(() => {
+          msg.style.display = "none";
+        }, 3000);
+      }, 3000);
+      //--> reaload the page
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        location.reload();
+      });
+      //--> Change color on click and difference between innerText, innerHTML, textContent
+      let testBtn = document.getElementById("testBtn");
+      testBtn.addEventListener("click", () => {
+        const paragraph = document.getElementById("paragraph");
+        console.log("innerHTML", paragraph.innerHTML);
+        console.log("innerText", paragraph.innerText);
+        console.log("textContent", paragraph.textContent);
+        paragraph.style.color =
+          paragraph.style.color === "red" ? "white" : "red";
+      });
+      //--> Remove first child
+      const section = document.querySelector("section");
+      section.style.color = "red";
+      section.addEventListener("click", () => {
+        section.style.display = "none";
+        //can use section.remove() but it will remove the whole section in a way that it cannot retrive by display block.
+
+        setTimeout(() => {
+          section.style.display = "block";
+        }, 5000);
+      });
+
+      //--> Traversing the DOM
+      document.getElementById("highlightFirstCity").addEventListener("click", () => {
+        const cityList = document.getElementById("cityList");
+        // cityList.children[0].style.backgroundColor = "yellow";//this will also work
+        // cityList.firstElementChild.style.backgroundColor = "yellow";//this also work
+        
+        const className = cityList.firstElementChild.classList;
+        const cls= document.getElementsByClassName(className.value)
+        cls[0].style.backgroundColor = "Yellow";
+        
+        cityList.children[0].style.color = "black";
+
+      });
+
+      //--> Manipulating DOM
+      const outerElement = document.getElementById("coffeeOrder");
+      const innerElement = outerElement.firstElementChild
+      const changeOrder = document.getElementById("changeOrder");
+      changeOrder.addEventListener('click',()=>{
+        innerElement.textContent = "espresso"
+      });
+
+      //--> Creating and inserting elements
+      const addNewItem = document.getElementById("addNewItem");
+      addNewItem.addEventListener('click',()=>{
+        const shoppingList = document.getElementById("shoppingList");
+        const newItem = document.getElementById("newItem");
+        if(newItem.value.trim().length>0){
+          shoppingList.appendChild(document.createElement('li'))
+          shoppingList.lastElementChild.innerText = newItem.value.trim();
+        }
+      });
+        
+    </script>
+  </body>
+</html>
