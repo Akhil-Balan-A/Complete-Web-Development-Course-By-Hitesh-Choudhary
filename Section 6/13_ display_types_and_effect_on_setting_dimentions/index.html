@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block, Inline, Inline-block</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            color: white;
+            /* display: flex; *//*The moment an element becomes a direct child of a Flex Container, its status changes from a regular block or inline element to a Flex Item. The rules of the Flexbox module then take precedence over the element's original display rules. It now respond to width height and margin properties*/
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            gap: 50px;
+
+        }
+        #block-container{
+            background-color: #9f68cf;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            display: block;
+            margin: 50px;
+        }
+        #inline-container{
+            background-color: #9f68cf;
+            padding: 40px;/*working*/
+            border-radius: 10px;
+            width: 90%;/*Not working*/
+            max-width: 500px;
+            height: 100px;/*Not working*/
+            display: inline;
+            margin: 50px; /*Not working*/
+        }
+        #inline-block-container{
+            background-color: #9f68cf;
+            padding: 50px;/*working*/
+            border-radius: 10px;
+            width: 90%;/*working*/
+            max-width: 500px;/*working*/
+            display: inline-block;
+            margin: 50px;/*working*/
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="block-container">
+        Display:Block = Block elements always start on a new line and take up the full available width. They respect Width, Height, and all Margin/Padding properties. 
+    </div>
+    <div id="inline-container">
+        Display:Inline = Inline elements flow horizontally on the same line as text. They IGNORE Width, Height, Margin-Top, and Margin-Bottom.
+    </div>
+    <div id="inline-block-container">
+        Display:Inline-block = The perfect hybrid. It respects block properties but flows inline. They respect Width, Height, and all Margin/Padding properties, AND stay on the same line.
+    </div>
+    
+</body>
+</html>

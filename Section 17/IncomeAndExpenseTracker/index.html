@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income and Expense Tracker</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        background-color: #9f68cf;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 1000px;
+        margin: 40px auto;
+        text-align: center;
+      }
+      .input-section {
+        display: flex;
+        max-width: 100%;
+        background-color: blue;
+        padding: 20px;
+        border-radius: 15px;
+        justify-content: space-between;
+        overflow: auto;
+        gap: 20px;
+      }
+      .expense-section {
+        background-color: red;
+        padding: 20px;
+        border-radius: 15px;
+      }
+      .income-section {
+        background-color: green;
+        padding: 20px;
+        border-radius: 15px;
+      }
+      .expense-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .income-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .date {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .particulars {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .amount {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .add-btn {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffcc00;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        word-wrap: wrap;
+      }
+      .journal-section {
+        display: flex;
+        margin-top: 20px;
+      }
+      .expense-list {
+        background-color: red;
+        width: 50%;
+        padding: 20px;
+        border-radius: 15px 0px 0px 15px;
+      }
+      .income-list {
+        background-color: green;
+        width: 50%;
+        padding: 20px;
+        border-radius: 0px 15px 15px 0px;
+      }
+      .summary-section {
+        background-color: #ffcc00;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 0px 10px 0px;
+        color: black;
+        line-height: 30px;
+        font: bold;
+      }
+      .expense-list table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border-radius: 8px;
+        overflow: hidden; /* makes rounded corners visible */
+        font-size: 16px;
+        outline: 2px solid black;
+      }
+      .income-list table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border-radius: 8px;
+        overflow: hidden; /* makes rounded corners visible */
+        font-size: 16px;
+        outline: 2px solid black;
+      }
+
+      /* Header Styling */
+      thead {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      thead th {
+        padding: 12px;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      /* Table rows */
+      tbody tr {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      tbody td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Hover Effect */
+      tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: black;
+        cursor: pointer;
+      }
+
+      /* Footer Total Row */
+      tfoot td {
+        padding: 12px;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-top: 2px solid rgba(255, 255, 255, 0.3);
+      }
+      tbody button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffcc00;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        word-wrap: wrap;
+      }
+
+      /* Make table scroll on small screens */
+      .expense-list,
+      .income-list {
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Income and Expense Tracker</h1>
+      <div class="input-section">
+        <div class="expense-section">
+          <form action="" id="expenseForm">
+            <input type="date" class="date" />
+            <input
+              type="text"
+              placeholder="Expense Name"
+              class="particulars"
+              required
+            />
+            <input
+              type="number"
+              placeholder="Expense Amount"
+              class="amount"
+              required
+            />
+            <button class="add-btn">Add Expense</button>
+          </form>
+        </div>
+        <div class="income-section">
+          <form action="" id="incomeForm">
+            <input type="date" class="date" />
+            <input
+              type="text"
+              placeholder="Income Name"
+              class="particulars"
+              required
+            />
+            <input
+              type="number"
+              placeholder="Income Amount"
+              class="amount"
+              required
+            />
+            <button class="add-btn">Add Income</button>
+          </form>
+        </div>
+      </div>
+      <div class="journal-section">
+        <div class="expense-list">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Particulars</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
+        <div class="income-list">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Particulars</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="summary-section">
+        <h2>Summary</h2>
+        <div class="total-expense"></div>
+        <div class="total-income"></div>
+        <div class="balance"></div>
+      </div>
+    </div>
+
+    <script>
+      const expenseSection = document.querySelector(".expense-section");
+      const incomeSection = document.querySelector(".income-section");
+
+      const expenseDate = expenseSection.querySelector(".date");
+      const expenseParticulars = expenseSection.querySelector(".particulars");
+      const expenseAmount = expenseSection.querySelector(".amount");
+      const expenseAddBtn = expenseSection.querySelector(".add-btn");
+
+      const incomeDate = incomeSection.querySelector(".date");
+      const incomeParticulars = incomeSection.querySelector(".particulars");
+      const incomeAmount = incomeSection.querySelector(".amount");
+      const incomeAddBtn = incomeSection.querySelector(".add-btn");
+
+      const expenseList = document.querySelector(".expense-list table tbody");
+      const incomeList = document.querySelector(".income-list table tbody");
+      const totalExpense = document.querySelector(".total-expense");
+      const totalIncome = document.querySelector(".total-income");
+      const finalBalance = document.querySelector(".balance");
+
+      const expenseForm = document.getElementById("expenseForm");
+      const incomeForm = document.getElementById("incomeForm");
+
+      let expense = JSON.parse(localStorage.getItem("expense")) || [];
+      let income = JSON.parse(localStorage.getItem("income")) || [];
+      renderExpenseList();
+      renderIncomeList();
+
+      expenseForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const date = expenseDate.value;
+        if (!date) {
+          alert("Date is required");
+          return;
+        }
+        //since future expense is not aloved
+        if (date > new Date().toISOString().split("T")[0]) {
+          alert("Future date is not allowed");
+          return;
+        }
+        const name = expenseParticulars.value.trim();
+        const amount = parseFloat(expenseAmount.value.trim());
+
+        if (amount < 0) {
+          alert("Amount cannot be negative");
+          return;
+        }
+
+        const expenseObj = {
+          date,
+          name,
+          amount,
+        };
+        expense.push(expenseObj);
+        localStorage.setItem("expense", JSON.stringify(expense));
+        expenseParticulars.value = "";
+        expenseParticulars.focus();
+        expenseAmount.value = "";
+
+        renderExpenseList();
+      });
+
+      incomeForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const date = incomeDate.value;
+        if (!date) {
+          alert("Date is required");
+          return;
+        }
+        if (date > new Date().toISOString().split("T")[0]) {
+          alert("Future date is not allowed");
+          return;
+        }
+        const name = incomeParticulars.value.trim();
+        const amount = parseFloat(incomeAmount.value.trim());
+
+        if (amount < 0) {
+          alert("Amount cannot be negative");
+          return;
+        }
+
+        const incomeObj = {
+          date,
+          name,
+          amount,
+        };
+        income.push(incomeObj);
+        localStorage.setItem("income", JSON.stringify(income));
+        incomeParticulars.value = "";
+        incomeParticulars.focus();
+        incomeAmount.value = "";
+
+        renderIncomeList();
+      });
+
+      function renderExpenseList() {
+        expenseList.innerHTML = "";//for clearing old rows as here we only appends the row data
+        let total = 0;
+        expense.forEach((item, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${item.date}</td>
+            <td>${item.name}</td>
+            <td>${item.amount}</td>
+            <td><button data-index="${index}" class="delete-expense">Delete</button></td>
+          `;
+          expenseList.appendChild(row);
+          total += item.amount;
+        });
+        totalExpense.innerText = "Total Expenses:" + total;
+        updateBalance();
+      }
+      function renderIncomeList() {
+        incomeList.innerHTML = "";//for clearing old rows as here we only appends the row data
+        let total = 0;
+        income.forEach((item, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${item.date}</td>
+            <td>${item.name}</td>
+            <td>${item.amount}</td>
+            <td><button data-index="${index}" class="delete-income">Delete</button></td>
+          `;
+          incomeList.appendChild(row);
+          total += item.amount;
+        });
+
+        totalIncome.innerText = "Total Income: " + total;
+        updateBalance();
+      }
+
+      function updateBalance() {
+        const totalExpense = expense.reduce(
+          (total, item) => total + item.amount,
+          0
+        );
+        const totalIncome = income.reduce(
+          (total, item) => total + item.amount,
+          0
+        );
+        const balance = totalIncome - totalExpense;
+        finalBalance.textContent = "Balance: " + balance;
+      }
+
+      //taking click even by chekc class.
+
+      // Handle delete clicks for expense & income tables (event delegation)
+      document.addEventListener("click", (e) => {
+        // Delete expense
+        if (e.target.classList.contains("delete-expense")) {
+          const index = e.target.getAttribute("data-index");
+          expense.splice(index, 1); // remove item
+          localStorage.setItem("expense", JSON.stringify(expense));
+          renderExpenseList();
+        }
+
+        // Delete income
+        if (e.target.classList.contains("delete-income")) {
+          const index = e.target.getAttribute("data-index");
+          income.splice(index, 1);
+          localStorage.setItem("income", JSON.stringify(income));
+          renderIncomeList();
+        }
+      });
+    </script>
+  </body>
+</html>

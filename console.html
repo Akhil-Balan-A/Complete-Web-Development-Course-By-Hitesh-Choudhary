@@ -3,18 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Button Hide Test</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body{
             background-color: black;
             color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+        .container{
+            background-color: #9f68cf;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: #c81b49;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+        #message{
+           text-align: center;
+           padding: 50px;
+           background-color: #333;
+           border-radius: 5px;
+           margin: 20px 0;
+           font-weight: bold;
+        }
+        .hidden{
+            display: none;
+        }
+        
+        
     </style>
 </head>
 <body>
 
-    <h1>Web Console</h1>
-
-    <script src="./Section 15/promisesAdvanced.js"></script>
+    <div class="container">
+        <div id="message" class="hidden">
+            Wishing you happy peaceful life
+        </div>
+        <button id="btn">Click here to the message</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const message = document.getElementById("message");
+            const btn = document.getElementById("btn")
+            btn.addEventListener('click',()=>{
+                message.classList.toggle("hidden");
+                btn.classList.add("hidden");
+            })
+            
+        })
+    </script>
 </body>
 </html>

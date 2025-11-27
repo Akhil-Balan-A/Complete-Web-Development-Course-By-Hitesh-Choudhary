@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+      <div class="input-container">
+        <input type="text" id="city" placeholder="Enter City Name" value="London" />
+        <button id="search">Get Weather</button>
+      </div>
+      <div class="output-container " id="weather-info">
+        <div class="weather-img-container">
+            <h3 id="weather"></h3>
+          <span id="weather-pic" style="font-size: 150px;">⛈️</span>
+        </div>
+        <div class="weather-details">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <span style="font-size: 25px;">🏙️</span>
+            <h2 id="city-name" style="display: inline-block;"></h2>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;">
+                 <span style="font-size: 25px;">🌡️</span>
+          <p id="temperature" style="display: inline-block;margin-top: 10px;"></p>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <span style="font-size: 25px;">✍️</span>
+                <p id="description" style="display: inline-block;margin-top: 10px;"></p>
+
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <span style="font-size: 25px;">💧</span>
+          <p id="humidity" style="display: inline-block;margin-top: 10px;"></p>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <span style="font-size: 25px;">💨</span>
+          <p id="wind-speed" style="display: inline-block;margin-top: 10px;"></p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

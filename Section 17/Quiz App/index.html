@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quiz App</h1>
+      <div id="quiz-container">
+        <div id="question-container" class="hidden">
+          <h2 id="question-text"></h2>
+          <ul id="choices-list">
+            <!--Choices will be appended here 
+                
+            dynamically-->
+            <!-- <li>
+              <input type="radio" name="choice" id="choice1" value="Paris" />
+              <label for="choice1">Paris</label>
+            </li>
+            <li>
+              <input type="radio" name="choice" id="choice2" value="London" />
+              <label for="choice2">London</label>
+            </li>
+            <li>
+              <input type="radio" name="choice" id="choice3" value="Berlin" />
+              <label for="choice3">Berlin</label>
+            </li>
+            <li>
+              <input type="radio" name="choice" id="choice4" value="Rome" />
+              <label for="choice4">Rome</label>
+            </li> -->
+          </ul>
+          <button id="next-btn">Next Question</button>
+        </div>
+        <div id="result-container" class="hidden">
+            <h2>Your score <span id="score"></span> mark</h2>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
+        <button id="start-btn">Start Quiz</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
