@@ -11,9 +11,10 @@ git commit -m "first commit" - used to commit the files to the git repository.
 git status - used to check the status of the git repository.
 
 # 89. Git commits and logs
-
+all about commiting and logs
 
 # 90. Git internal working and configs
+
 
 # 91. Git merge and git conflicts
 
