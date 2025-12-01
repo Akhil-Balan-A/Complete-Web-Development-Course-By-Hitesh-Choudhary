@@ -14,16 +14,23 @@ git status - used to check the status of the git repository.
 all about commiting and logs
 
 # 90. Git internal working and configs
-
+git internal files and how it works.
 
 # 91. Git merge and git conflicts
+how to merge two branches
+
 
 # 92. Git Diff and stashing
+git diff - diff is used to compare two versions of a file
+git stash - stashing let you temporarily save changes that you are not ready to commit yet
 
 # 93. Git rebase is not that scary
+rebase - Take your branch and replay its commits on top of another branch, creating a cleaner history.
+Instead of merging branches (which creates a merge commit), rebase makes your history look like a straight line.
 
 # 94. Insight of pushing code to github
+how to use github to push file form system to cloud
 
 # 95. How to make Pull Request and Open Source contribution
-
+how to use pull request get updated the local files and opensours contribution.
 
