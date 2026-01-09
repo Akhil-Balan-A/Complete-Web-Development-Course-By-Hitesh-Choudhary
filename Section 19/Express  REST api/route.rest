@@ -1,0 +1,25 @@
+GET http://localhost:5000/subscribers
+
+###
+GET http://localhost:5000/subscribers/6936d9d49bf4fb8495c36c75
+
+###
+
+POST http://localhost:5000/subscribers
+Content-Type: application/json
+
+{
+    "name":"Akhil Balan AA",
+    "subscribedToChannel": "Web Dev Simplified"
+}
+###
+PATCH http://localhost:5000/subscribers/6936d9d49bf4fb8495c36c75
+Content-Type: application/json
+
+{
+    "name":"Akhil Balan",
+    "subscribedToChannel": "Web Dev Simplified"
+}
+###
+DELETE http://localhost:5000/subscribers/6938045408573798afed4186
+

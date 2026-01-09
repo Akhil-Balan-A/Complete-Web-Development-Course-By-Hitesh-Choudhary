@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Home</h1>
+    <h3>Add Person</h3>
+      <div class="list-container">
+        <h2>Peoples list</h3>
+            <% if (successMsg) { %>
+    <div id="message-container" style="background-color: #4CAF50; color: white; padding: 15px; text-align: center; margin-bottom: 20px;">
+        <%= successMsg.replace(/\+/g, ' ') %>
+    </div>
+<% } else if (errorMsg) { %>
+    <div id="message-container" style="background-color: #f44336; color: white; padding: 15px; text-align: center; margin-bottom: 20px;">
+        <%= errorMsg.replace(/\+/g, ' ') %>
+    </div>
+<% } %>
+    <form action="/person" method="POST">
+        <input type="text" name="name" placeholder="Enter the name"><br>
+        <input type="number" name="age" placeholder="Enter your age"><br>
+        <input type="email" name="email" placeholder="Enter your email"><br>
+        <button type="submit">Add Person</button>
+    </form>
+    <br>
+    <br>
+    <a href="/people">Peoples list</a>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const msgContainer = document.getElementById('message-container');
+        if (msgContainer) {
+            // Set a timeout to remove the message after 5 seconds
+            setTimeout(() => {
+                msgContainer.style.transition = 'opacity 1s ease-out';
+                msgContainer.style.opacity = '0';
+                
+                // Remove the element completely after the fade out
+                setTimeout(() => {
+                    msgContainer.remove();
+                }, 1000); 
+            }, 5000); 
+        }
+    });
+</script>
+</body>
+</html>

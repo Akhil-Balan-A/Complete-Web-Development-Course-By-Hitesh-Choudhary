@@ -1,0 +1,53 @@
+<div class="newAuthor-container">
+  <h2>New Author</h2>
+
+  <form id="newAuthorForm" action="/authors/new" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<%=author.name||""%>" required />
+    </div>
+    <br />
+    <div>
+      <label for="bio">Bio:</label>
+      <textarea id="bio" name="bio" required <%=author.bio||""%>></textarea>
+    </div>
+    <br />
+    <div>
+      <label>Nationality</label>
+    <select name="nationality">
+      <option value="" disabled
+        <%= !author.nationality ? 'selected' : '' %>>
+        Select Nationality
+      </option>
+      <% countries.forEach(country => { %>
+        <option value="<%= country %>"
+          <%= author.nationality === country ? 'selected' : '' %>>
+          <%= country %>
+        </option>
+      <% }) %>
+    </select>
+    </div>
+    <br />
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" value="<%=author.dob? new Date(author.dob).toISOString().split('T')[0] : ""%>" required />
+    </div>
+    <br />
+    <div>
+      <label for="photo">Photo:</label>
+      <input type="file" id="photo" name="photo" required accept="image/*" capture />
+    </div>
+    <br />
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" value="<%=author.email||""%>" id="email" name="email" required />
+    </div>
+    <br>
+    <div>
+      <label for="rating">Rating:</label>
+      <input type="number" value="<%=author.rating||""%>" id="rating" name="rating" required placeholder="Rating out of 5" min="1" max="5" />
+    </div>
+    <br />
+    <button type="submit">Create Author</button>
+  </form>
+</div>

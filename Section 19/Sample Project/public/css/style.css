@@ -1,0 +1,161 @@
+/* public/styles/main.css */
+
+/* --- 1. Simple CSS Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+    /* Important for sticky footer setup */
+    min-height: 100vh; 
+}
+
+/* --- 2. Main Layout Container (Flexbox for Sticky Footer) --- */
+#layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the container fills the entire viewport height */
+}
+
+/* --- 3. Header Styling --- */
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ecf0f1;
+}
+
+/* --- 4. Main Content Styling --- */
+main {
+    flex-grow: 1; /* This is the key: it forces main to take up all remaining space */
+    padding: 2rem;
+    max-width: 1200px; /* Optional: Sets a max width for content */
+    width: 100%;
+    margin: 0 auto; /* Centers the main content area */
+}
+
+/* --- 5. Footer Styling --- */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* new Author page */
+.newAuthor-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.newAuthor-container h2{
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+.newAuthor-container form{
+    background-color: aquamarine;
+    padding: 40px 20px 20px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    
+    
+}
+.newAuthor-container form input{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 200px;
+    flex: 1;
+}
+.newAuthor-container form textarea{
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    flex: 1;
+}
+.newAuthor-container form button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+     display: block;
+    margin: 5px auto;
+}
+
+.newAuthor-container form div{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+/*CSS ANIMATION for flash message to fade.*/
+.flash-message {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+/* all authers page*/
+
+.authors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.author-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.author-card img {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  object-fit:cover;
+  max-width: 100%;
+  height: auto;
+}
+
+
+

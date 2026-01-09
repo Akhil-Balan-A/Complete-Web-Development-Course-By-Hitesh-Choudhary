@@ -1,0 +1,16 @@
+<div class="books-container">
+    <h1>All Books</h1>
+    <div class="books-list">
+        <% books.forEach(book => { %>
+        <div class="book-card">
+            <img src="<%=book.coverImage%>" alt="<%=book.title%>">
+            <h2><%=book.title%></h2>
+            <p><strong>Author:</strong> <%=book.author.name%></p>
+            <p><strong>Rating:</strong> <%=book.rating%>/5</p>
+            <p><strong>Description:</strong> <%=book.description%></p>
+            <p><strong>Genre:</strong> <%=book.genre%></p>
+            <p><strong>Publish Date:</strong> <%=book.publishDate%></p>
+        </div>
+        <% }) %>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <script src="/js/cart.js"></script>
+</head>
+<body>
+
+  <h2>Products</h2>
+
+  <% if (user) { %>
+    <p>Logged in | <a href="/logout">Logout</a></p>
+  <% } else { %>
+    <p>Guest Mode</p>
+  <% } %>
+
+  <hr/>
+
+  <% products.forEach(product => { %>
+    <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+      <h4><%= product.title %></h4>
+      <img src="<%= product.thumbnail %>" width="120" />
+      <p>₹ <%= product.price %></p>
+
+      <% if (user) { %>
+        <form method="POST" action="/cart/add">
+          <input type="hidden" name="productId" value="<%= product.id %>" />
+          <button type="submit">Add to Cart</button>
+        </form>
+      <% } else { %>
+        <button onclick="addToCart('<%= product.id %>')">
+          Add to Cart (Guest)
+        </button>
+      <% } %>
+    </div>
+  <% }) %>
+
+</body>
+</html>

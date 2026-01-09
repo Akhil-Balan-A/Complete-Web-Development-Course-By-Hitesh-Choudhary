@@ -1,0 +1,32 @@
+<% if (flashSuccess && flashSuccess.length > 0) { %>
+  <div class="flash-message"
+       style="color:white; margin-bottom:10px; background:green;
+              text-align:center; height:50px; line-height:50px;
+              font-weight:bold;">
+    <%= flashSuccess[0] %>
+  </div>
+<% } %>
+
+<% if (flashError && flashError.length > 0) { %>
+  <div class="flash-message"
+       style="color:white; margin-bottom:10px; background:red;
+              text-align:center; height:50px; line-height:50px;
+              font-weight:bold;">
+    <%= flashError[0] %>
+  </div>
+<% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

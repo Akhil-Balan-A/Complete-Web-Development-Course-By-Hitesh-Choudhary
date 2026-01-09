@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input, button{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            width: 300px;
+        }
+        button{
+            cursor: pointer;
+            background-color: #ba3799;
+            color: #fff;
+        }
+        button:hover{
+            background-color: #6e2020;
+            color: #fff;
+        }
+        h1{
+            color: #fff;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Update Person details</h1>
+    <form action="/update/<%=person._id %>?_method=PUT" method="POST">
+        <input type="text" name="name" value="<%=person.name %>" placeholder="Enter the name"><br>
+        <input type="number" name="age" value="<%=person.age %>" placeholder="Enter your age"><br>
+        <input type="email" name="email" value="<%=person.email %>" placeholder="Enter your email"><br>
+        <button type="submit">Update Info</button>
+    </form>
+    <br>
+    <br>
+    <a href="/people">Peoples list</a>
+    
+    
+</body>
+</html>

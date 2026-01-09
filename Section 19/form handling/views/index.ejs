@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home Page</title>
+</head>
+<body>
+
+    <h1><%= message %></h1>
+    <h2>Register your username and email</h2>
+    <form action="/user" method="post" enctype="multipart/form-data">
+        <input type="text" name="userName" id="userName" placeholder="Enter your username">
+        <input type="email" name="userEmail" id="userEmail" placeholder="Enter your email">
+        <input type="file" name="userImage" id="userImage" accept="image/*" >
+        <button type="submit">Submit Info</button>
+
+    </form>
+    
+</body>
+</html>

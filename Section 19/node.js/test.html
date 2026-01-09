@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Only Features</title>
+    <style>
+        /* --- General Styling --- */
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* --- 1. Expandable FAQ Section (Using <details>) --- */
+        .faq-section {
+            max-width: 700px;
+            margin: 40px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* The <details> element handles the open/close state */
+        details {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        /* The <summary> element is the clickable title */
+        summary {
+            font-weight: bold;
+            color: #007bff;
+            padding: 5px 0;
+            outline: none; /* Removes outline when clicked */
+        }
+
+        details p {
+            padding-left: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* --- 2. Pure CSS Carousel (Using Scroll Snapping) --- */
+        .carousel-container {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            overflow-x: scroll; /* Enables horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Forces scroll to snap to items */
+            -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .carousel-item {
+            flex: 0 0 100%; /* Each item takes up 100% of the container width */
+            scroll-snap-align: start; /* Snap the start of the item to the container start */
+            height: 350px;
+            line-height: 350px;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Item specific styles */
+        .item-1 { background-color: #ff5733; }
+        .item-2 { background-color: #33ff57; }
+        .item-3 { background-color: #3357ff; }
+
+        /* Hide the scrollbar (optional aesthetic improvement) */
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Hello <%= locals.text || "Arun AC" %>, Welcome to HTML/CSS Only Features
+    </h1>
+    <h1>✨ Powerful HTML & CSS Features (No JS Needed)</h1>
+    <p style="text-align: center;">These elements provide user interaction and utility purely with standard browser features.</p>
+
+    <hr>
+
+    <h2>1. Expandable FAQ Section using &lt;details&gt;</h2>
+    <div class="faq-section">
+
+        <details open>
+            <summary>What is HTML's &lt;details&gt; tag?</summary>
+            <p>The <code>&lt;details&gt;</code> HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A <code>&lt;summary&gt;</code> element is used as the visible heading.</p>
+        </details>
+
+        <details>
+            <summary>Can I use this for menus?</summary>
+            <p>Yes, absolutely! It is great for creating hierarchical menus, nested lists, or any component where you need to hide and show a block of content.</p>
+        </details>
+
+        <details>
+            <summary>Does it require any JavaScript?</summary>
+            <p>No! This feature is natively supported by modern browsers and requires zero JavaScript code to handle the opening and closing behavior.</p>
+        </details>
+    </div>
+
+    <hr>
+
+    <h2>2. CSS Scroll-Snap Image Carousel</h2>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            
+            <div class="carousel-item item-1">
+                Image 1 (Scroll/Swipe)
+            </div>
+
+            <div class="carousel-item item-2">
+                Image 2 (Snaps into place)
+            </div>
+            
+            <div class="carousel-item item-3">
+                Image 3 (Pure CSS)
+            </div>
+            
+        </div>
+        <p style="text-align: center; font-style: italic; margin-top: 10px;">(Try scrolling or swiping horizontally on the box above)</p>
+    </div>
+
+</body>
+</html>
